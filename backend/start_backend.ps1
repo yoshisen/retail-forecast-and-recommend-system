@@ -1,7 +1,7 @@
 # 快速启动脚本（需要先cd到backend目录激活虚拟环境）
 # Windows PowerShell
 
-Write-Host "🚀 启动 AEON 零售分析平台 后端服务..." -ForegroundColor Cyan
+Write-Host "🚀 启动 LUMI 零售分析平台 后端服务..." -ForegroundColor Cyan
 Write-Host ""
 
 # 检查是否在backend目录

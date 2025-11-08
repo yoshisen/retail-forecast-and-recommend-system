@@ -118,13 +118,13 @@ dataAnalysisProject/
 python generate_supermarket_data.py
 \`\`\`
 
-これにより `aeon_tokyo_sales_data.xlsx` が生成されます。
+これにより `lumi_tokyo_sales_data.xlsx` が生成されます。
 
 ### 2. Excel アップロード
 
 \`\`\`bash
 curl -X POST "http://localhost:8000/api/v1/upload" \\
-  -F "file=@aeon_tokyo_sales_data.xlsx"
+  -F "file=@lumi_tokyo_sales_data.xlsx"
 \`\`\`
 
 または Web UI からアップロード。
@@ -193,7 +193,7 @@ npm run test
 \`\`\`env
 # Application
 DEBUG=true
-APP_NAME="AEON Retail Analytics System"
+APP_NAME="LUMI Retail Analytics System"
 
 # File Upload
 MAX_UPLOAD_SIZE=104857600  # 100MB
@@ -255,7 +255,7 @@ CACHE_TTL=3600
 
 ## 📄 ライセンス
 
-MIT License
+Apache-2.0 license
 
 ---
 

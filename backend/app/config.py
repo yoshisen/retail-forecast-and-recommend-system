@@ -11,7 +11,7 @@ class Settings(BaseSettings):
     """Application settings"""
     
     # Application
-    APP_NAME: str = "AEON Retail Analytics System"
+    APP_NAME: str = "LUMI Retail Analytics System"
     APP_VERSION: str = "1.0.0"
     API_V1_PREFIX: str = "/api/v1"
     DEBUG: bool = True

@@ -1,8 +1,8 @@
-# AEON Tokyo Retail Analytics & ML Platform
+# LUMI Tokyo Retail Analytics & ML Platform
 
 ## 🎯 プロジェクト概要
 
-日本のスーパーマーケット（AEON東京首都圏規模）向けの販売予測と商品推薦システム。Excelファイルからの一括データアップロード、自動特徴量生成、機械学習モデル訓練、リアルタイム予測・推薦APIを提供。
+日本のスーパーマーケット（LUMI東京首都圏規模）向けの販売予測と商品推薦システム。Excelファイルからの一括データアップロード、自動特徴量生成、機械学習モデル訓練、リアルタイム予測・推薦APIを提供。
 
 ### スケール
 - **店舗数**: 65店舗（東京・神奈川・千葉・埼玉）
@@ -168,7 +168,7 @@ Response:
 
 ### 販売予測
 ```
-GET /api/v1/forecast?product_id=P000001&store_id=AEON0001&horizon=14
+GET /api/v1/forecast?product_id=P000001&store_id=LUMI0001&horizon=14
 
 Response:
 {
@@ -321,7 +321,7 @@ npm run test
 
 ## 📝 ライセンス
 
-MIT License
+Apache-2.0 license
 
 ## 👥 作者
 

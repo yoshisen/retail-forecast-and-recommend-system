@@ -1,7 +1,7 @@
-# AEON Retail Analytics Platform - Quick Start Script
+# LUMI Retail Analytics Platform - Quick Start Script
 # Windows PowerShell
 
-Write-Host "🚀 Starting AEON Retail Analytics Platform..." -ForegroundColor Cyan
+Write-Host "🚀 Starting LUMI Retail Analytics Platform..." -ForegroundColor Cyan
 Write-Host ""
 
 # Check Python version

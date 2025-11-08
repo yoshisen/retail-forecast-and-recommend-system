@@ -27,7 +27,7 @@ def test_field_standardizer():
 def test_excel_parser_full():
     """完全Excel解析テスト"""
     parser = ExcelParser()
-    result = parser.parse("data/uploaded/aeon_tokyo_data.xlsx")
+    result = parser.parse("data/uploaded/lumi_tokyo_data.xlsx")
     assert "transactions" in result
     assert len(result["transactions"]) > 0
 ```
@@ -178,7 +178,7 @@ def test_health_check():
 
 def test_upload_excel():
     """Excelアップロードテスト"""
-    with open("data/uploaded/aeon_tokyo_data.xlsx", "rb") as f:
+    with open("data/uploaded/lumi_tokyo_data.xlsx", "rb") as f:
         response = client.post(
             "/api/v1/upload",
             files={"file": ("test.xlsx", f)}
@@ -188,7 +188,7 @@ def test_upload_excel():
 
 def test_forecast_endpoint():
     """予測APIテスト"""
-    response = client.get("/api/v1/forecast?product_id=P000001&store_id=AEON0001&horizon=14")
+    response = client.get("/api/v1/forecast?product_id=P000001&store_id=LUMI0001&horizon=14")
     assert response.status_code == 200
     data = response.json()["data"]
     assert len(data["predictions"]) == 14
@@ -250,7 +250,7 @@ test('uploadExcel makes POST request', async () => {
 def test_upload_train_predict_flow():
     """完全フロー統合テスト"""
     # 1. Excelアップロード
-    with open("data/uploaded/aeon_tokyo_data.xlsx", "rb") as f:
+    with open("data/uploaded/lumi_tokyo_data.xlsx", "rb") as f:
         upload_response = client.post("/api/v1/upload", files={"file": f})
     assert upload_response.status_code == 200
     
@@ -259,7 +259,7 @@ def test_upload_train_predict_flow():
     assert train_response.status_code == 200
     
     # 3. 予測実行
-    forecast_response = client.get("/api/v1/forecast?product_id=P000001&store_id=AEON0001")
+    forecast_response = client.get("/api/v1/forecast?product_id=P000001&store_id=LUMI0001")
     assert forecast_response.status_code == 200
     
     # 4. 推薦モデル訓練
@@ -283,7 +283,7 @@ import time
 
 def test_batch_forecast_performance():
     """バッチ予測パフォーマンステスト"""
-    pairs = [{"product_id": f"P{i:06d}", "store_id": "AEON0001"} for i in range(100)]
+    pairs = [{"product_id": f"P{i:06d}", "store_id": "LUMI0001"} for i in range(100)]
     
     start = time.time()
     response = client.post("/api/v1/forecast/batch", json={"pairs": pairs})
@@ -304,7 +304,7 @@ pytest tests/performance/ -v
 ```python
 def test_generated_data_quality():
     """生成データ品質テスト"""
-    df = pd.read_excel("data/uploaded/aeon_tokyo_data.xlsx", sheet_name="Transactions")
+    df = pd.read_excel("data/uploaded/lumi_tokyo_data.xlsx", sheet_name="Transactions")
     
     # 取引件数確認（月間50万件想定）
     assert len(df) > 400000
@@ -336,7 +336,7 @@ def test_missing_required_sheet():
 
 def test_forecast_nonexistent_product():
     """存在しない商品予測テスト"""
-    response = client.get("/api/v1/forecast?product_id=INVALID&store_id=AEON0001")
+    response = client.get("/api/v1/forecast?product_id=INVALID&store_id=LUMI0001")
     assert response.status_code == 404
 ```
 

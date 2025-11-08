@@ -69,7 +69,7 @@ npm run dev
 python generate_supermarket_data.py
 ```
 
-生成されたファイル: `data/uploaded/aeon_tokyo_data.xlsx`
+生成されたファイル: `data/uploaded/lumi_tokyo_data.xlsx`
 
 ## 📦 本番環境デプロイ
 

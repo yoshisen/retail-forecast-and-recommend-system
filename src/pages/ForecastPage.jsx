@@ -70,7 +70,7 @@ const ForecastPage = () => {
             name="store_id"
             rules={[{ required: true, message: '店舗IDを入力してください' }]}
           >
-            <Input placeholder="例: AEON0001" />
+            <Input placeholder="例: LUMI0001" />
           </Form.Item>
 
           <Form.Item

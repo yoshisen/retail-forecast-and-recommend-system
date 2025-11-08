@@ -1,7 +1,7 @@
 """
 イオン東京圏スーパーマーケット販売データ生成器
 データ分析テスト用の複数シートを含むExcelファイルを生成
-AEON Tokyo Metropolitan Area scale simulation
+LUMI Tokyo Metropolitan Area scale simulation
 """
 
 import pandas as pd
@@ -15,9 +15,9 @@ random.seed(42)
 np.random.seed(42)
 fake = Faker('ja_JP')
 
-# ==================== 配置パラメータ (AEON東京圏規模) ====================
-# AEON東京圏: 約60店舗、10万人以上の会員、月間約50万件の取引
-NUM_STORES = 65  # 東京圏のAEON店舗数
+# ==================== 配置パラメータ (LUMI東京圏規模) ====================
+# LUMI東京圏: 約60店舗、10万人以上の会員、月間約50万件の取引
+NUM_STORES = 65  # 東京圏のLUMI店舗数
 NUM_CUSTOMERS = 120000  # イオン会員数
 NUM_PRODUCTS = 3500  # 取扱商品数
 NUM_TRANSACTIONS = 500000  # 月間取引数（約6ヶ月分で300万件）
@@ -52,7 +52,7 @@ def generate_stores():
         store_type = random.choice(store_types)
         
         stores.append({
-            'store_id': f'AEON{i+1:04d}',
+            'store_id': f'LUMI{i+1:04d}',
             'store_name': f'イオン{area["city"]}{random.choice(["駅前", "中央", "南", "北", "東", "西"])}店',
             'store_type': store_type,
             'store_size_sqm': random.randint(1000, 8000),
@@ -191,7 +191,7 @@ def generate_customers():
             'phone': fake.phone_number(),
             'loyalty_tier': random.choice(['一般', 'シルバー', 'ゴールド', 'プラチナ']),
             'total_lifetime_value_jpy': round(random.uniform(50000, 5000000), 0),
-            'preferred_store_id': f'AEON{random.randint(1, NUM_STORES):04d}',
+            'preferred_store_id': f'LUMI{random.randint(1, NUM_STORES):04d}',
             'waon_card_number': f'WAON{random.randint(1000000000, 9999999999)}'
         })
     
@@ -530,7 +530,7 @@ def main():
     print("\n" + "=" * 70)
     print("Excelファイルに保存中...")
     print("=" * 70)
-    output_file = 'data/uploaded/aeon_tokyo_sales_data.xlsx'
+    output_file = 'data/uploaded/lumi_tokyo_sales_data.xlsx'
     
     # ディレクトリが存在しない場合は作成
     import os

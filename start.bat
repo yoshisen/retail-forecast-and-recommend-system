@@ -1,9 +1,9 @@
 @echo off
-REM Quick Start Script for AEON Retail Analytics Platform
+REM Quick Start Script for LUMI Retail Analytics Platform
 REM Windows Batch File
 
 echo ========================================
-echo  AEON Retail Analytics Platform
+echo  LUMI Retail Analytics Platform
 echo ========================================
 echo.
 
